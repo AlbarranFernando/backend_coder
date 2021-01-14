@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio01a</title>
+</head>
+<body>
+ <script>
+     class Usuario{
+         constructor(nombre, apellido, libros, mascotas){
+            this.nombre = nombre;
+            this.apellido = apellido;
+            this.libros = libros;
+            this.mascotas = mascotas;
+         }
+        getFullName() {
+            return `Mi nombre completo es ${this.nombre} ${this.apellido}` ;
+        }
+        getMascotas() {
+            return `Tengo en total ${this.mascotas.length} mascotas` ;
+        }
+        getBooks() {
+            let nomLibros = this.libros.map(tit => tit.titulo); return `Los libros que tengo actualmente son ${nomLibros} ` 
+        }
+        addMascota(sumasc) {
+            this.mascotas = [...this.mascotas, sumasc]
+        }
+        addBook( newLib, newAutor)  {
+            this.libros = [...this.libros,{ titulo: newLib, autor: newAutor}]
+        }
+
+     }
+
+     
+        let libros = [
+            {
+                titulo: 'El señor de las moscas',
+                autor: 'William Golding'
+            }, 
+            {
+                titulo: 'Fundacion', 
+                autor: 'Isaac Asimov'
+            }
+        ] ;
+        
+        let mascotas = ['perro', 'gato'] ;
+        let usuario = new Usuario('Elon','Musk', libros, mascotas)
+
+       console.log(usuario.getFullName());
+       console.log(usuario.getMascotas());
+       console.log(usuario.addMascota('canario'));
+       console.log(usuario.getMascotas());
+       console.log(usuario.getBooks())  
+       console.log(usuario.addBook('Yo Robot','Isaac Asimov'))
+       console.log(usuario.getBooks())     
+
+ </script> 
+    
+
+</body>
+</html>
