@@ -7,7 +7,7 @@ const lectura = (texto1, intervalo, callback) => {
         if (i < pal.length){
         console.log(pal[i])
         i++;}
-        else {clearInterval(TempInt); console.log("Final")}
+        else {clearInterval(TempInt); callback(ArrW.length)}
 
     },intervalo,ArrW)
 
@@ -18,10 +18,13 @@ const lectura = (texto1, intervalo, callback) => {
     //clearInterval()
 }
 
-lectura('Los hermanos sean unidos, porque esa es la ley primera',500, ()=>{
-    lectura('Vuelve el perro arrepentido, con el rabo entre las patas',500, ()=>{
-        lectura('La venganza nunca es buena, mata el alma y envenena',500, ()=>{
-
+lectura('Los hermanos sean unidos, porque esa es la ley primera',500, (letra) => {
+    let tolet = letra;
+    lectura('Vuelve el perro arrepentido, con el rabo entre las patas',500, (letra)=>{
+            tolet = tolet +letra
+        lectura('La venganza nunca es buena, mata el alma y envenena',500, (letra)=>{
+            tolet = tolet +letra;    
+            console.log(`Proceso completo , ${tolet} palabras totales`)
 
         });
 
