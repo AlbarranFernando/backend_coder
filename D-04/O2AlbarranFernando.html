@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio01a</title>
+  </head>
+<body>
+    <input id="original">
+    <p id="espejo"></p>
+
+    <script type="module">
+        import { fromEvent } from 'https://dev.jspm.io/rxjs@6/_esm2015';
+        import { map, filter } from 'https://dev.jspm.io/rxjs@6/_esm2015/operators';
+        
+        let input = document.getElementById('original')
+        let espejo = document.getElementById('espejo')
+        const observable = fromEvent(input, 'keydown')
+
+        let ebircse = '';
+
+        const tickSubs = observable.pipe(
+            filter( event => {
+                if  (   event.which  <=  90 && event.which    >=  48) {
+                    return event;
+                }
+
+            }
+            
+                 ),
+                map( event =>{
+               // console.log(event)
+                return event.key
+
+            }
+
+            )
+
+        ).subscribe(key => {
+            ebircse += key
+            
+            if (ebircse === 'error'){
+                tickSubs.error('Se escribio error')
+            }
+            if (ebircse === 'completo'){
+                tickSubs.complete('Se escribio completo')
+            }
+            espejo.textContent = ebircse.split('').reverse().join('');
+            setTimeout(() => {
+                tickSubs.unsubscribe();
+            }, 30000)
+        }, error => {
+            console.log(error)
+                borrado();
+        },
+        () => {
+            console.log('Se escribio completo')
+            borrado();
+        }      
+        )
+
+        const borrado=()=>{
+            ebircse ='';
+            input.value = '';
+            input.disabled = true;
+            espejo.textContent = ''; 
+
+        }
+        
+ </script> 
+
+    
+
+</body>
+</html>
