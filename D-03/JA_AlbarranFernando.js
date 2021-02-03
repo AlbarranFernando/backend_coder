@@ -8,7 +8,7 @@ const lectura = (texto1, intervalo, callback) => {
         console.log(pal[i])
         i++;}
         else {clearInterval(TempInt); callback(ArrW.length)}
-
+ 
     },intervalo,ArrW)
 
    // else {clearInterval(TempInt)}
