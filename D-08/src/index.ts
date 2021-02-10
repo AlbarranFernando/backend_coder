@@ -1,46 +1,33 @@
 import express from 'express'
+
 const app = express()
-
 app.use(express.json())
-
 var productos: any[] = []
 
-app.get('/api/productos',(req,res) => {
-  let productoVista = productos
-  if (!productos.length) productoVista = [{error : "no hay productos cargados"}]
-  res.json(productoVista)
-})
-
-app.get('/api/productos/:id',(req,res) => {
-  let id = req.params.id
-  let producto = productos.find(producto => producto.id === id)
-  if (!producto) producto = {error : 'producto no encontrado'}
-  res.json(producto)
-
+app.get('/api/productos', async (_req,res) => {
+  const products = await import('./Modulos').then(res => res.default)
+  let prod = new products(productos)
+  res.status(200).json(prod.getProducts())
 })
 
 
-app.post('/api/productos', (req,res) => {
-  const {title, price, thumbail} = req.body
-  const id = (productos.length + 1 ).toString()
-  const producto = {
-    id,
-    title,
-    price,
-    thumbail,
-  }
-  productos.push(producto)
+app.get('/api/productos/:id',async (req,res) => {
+  const products = await import('./Modulos').then(res => res.default)
+  let prod = new products(productos)
+  res.status(200).json(prod.findOneProduct(req.params.id))
+})
+
+app.post('/api/productos', async (req,res) => {
+  const products = await import('./Modulos').then(res => res.default)
+  let prod = new products(productos)
+  prod.addProduct(req.body)
   res.sendStatus(201)
 })
-
 
 app.listen(8080,() => {
   console.log("Running on port 8080");
 }).on('error', (e) => {
   console.log('Error happened: ', e.message)
 });
-
-
-
 
 
