@@ -38,10 +38,10 @@
          }
          let producto = this.products.find((prod:any) => prod.id === id);
          if (!producto) producto = {error : 'producto no encontrado'}
-            else  this.products.splice(this.products.indexOf(producto), 1,productoAct)
-
-
-         return productoAct
+            else  {this.products.splice(this.products.indexOf(producto), 1,productoAct)
+                     producto = productoAct
+                 }
+         return producto
     }
 
       delProduct(id: string){
