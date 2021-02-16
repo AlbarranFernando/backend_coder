@@ -1,0 +1,13 @@
+body {background-color: #e8e8e8;}
+.verde {
+	color: #005c1d;
+}
+.verdolaga{
+	color: #7da17e;
+}
+
+ol li{
+	color: #de425b;
+}
+
+

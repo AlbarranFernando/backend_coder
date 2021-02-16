@@ -1,0 +1,32 @@
+{{> lovedChamps}}
+<br>
+{{> hatedChamps}}
+<br>
+<h1 class="text-center text-primary">Vista de Productos</h1>
+{{#if listExists}}
+
+    <table class="table">
+          <thead>
+    <tr class="table table-primary">
+      <th scope="col">id</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Precio</th>
+      <th scope="col">Foto</th>
+
+    </tr>
+  </thead>
+  <tbody>
+            {{#each suggestedChamps}}
+                <tr class="table-success">
+                <td>{{this.id}}</td>
+                <td>{{this.title}}</td>
+                <td>{{this.price}}</td>
+                <td><img width="50" height="50"src="{{this.thumbnail}}"/></td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+
+{{else}}<h2 class="text-center alert-warning">No Se Encontraron Productos</h2>
+
+{{/if}}

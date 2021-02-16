@@ -1,0 +1,28 @@
+{{> lovedChamps}}
+<br>
+{{> hatedChamps}}
+<br>
+<h2 class="text-center text-primary">Ingrese Producto</h2>
+
+<section class="section">
+        <form action="/api/productos/" enctype="application/x-www-form-urlencoded" method="POST" class="container"id="myForm">
+            
+                <label class="h6 fst-italic">Nombre</label>
+                    <div>
+                        <input class="input" type="text" placeholder="Producto" name="title">
+                    </div>
+                <label class="h6 fst-italic">Precio</label>
+                    <div>
+                        <input class="input is-success" type="text" placeholder="Precio" name="price">
+                    </div>
+                <label class="h6 fst-italic">Foto URL</label>
+                    <div>
+                        <input class="input is-success" type="text" placeholder="Imagen" name="thumbnail">
+                    </div>
+                        <br>
+                <div >
+                  <button class="btn btn-success">Enviar</button>
+                </div>
+
+        </form>
+    </section>
