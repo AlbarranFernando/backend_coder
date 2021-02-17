@@ -1,0 +1,48 @@
+
+
+    <br>
+    <br>
+    <h1 class="text-center text-primary alert-secondary">Vista de Productos</h1>
+    
+ 
+        
+    <% if (productos.length) { %>
+
+        <table class="table">
+              <thead>
+        <tr class="table table-primary">
+          <th scope="col">id</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Precio</th>
+          <th scope="col">Foto</th>
+    
+        </tr>
+      </thead>
+      <tbody>
+        <% productos.forEach((prod)=>{ %>
+
+                    <tr class="table-success">
+                    <td><%= prod.id %></td>
+                    <td><%= prod.title %></td>
+                    <td><%= prod.price %></td>
+                    <td><img width="50" height="50" src=<%= prod.thumbnail %>></td>
+                    </tr>
+
+                    <% })  %>
+            </tbody>
+        </table>
+
+        <%} else { %>
+        <h2 class="text-center alert-warning">No Se Encontraron Productos</h2>
+        <% } %>
+    
+      
+    
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>

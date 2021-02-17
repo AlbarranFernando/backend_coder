@@ -33,7 +33,7 @@ app.post('/uploadfile',upload.single('myFile'),(req,res,next)=>{
   })
   /////////////Multer fin///////////////////
   /////////////////Plantillas/////////////////////////
-  app.set('view engine', 'pug');
+  app.set('view engine', 'ejs');
   app.set('views', path.join(__dirname + '/views'));
   app.use(express.static("public"));
 ///////////////////////Plantillas fin/////////

@@ -1,0 +1,31 @@
+<body>
+    <br>
+<br>
+<h2 class="text-center text-primary alert-secondary">Ingrese Producto</h2>
+
+<section class="section">
+        <form action="/api/productos/" enctype="application/x-www-form-urlencoded" method="POST" class="container" id="myForm">
+            
+                <label class="h6 fst-italic">Nombre</label>
+                    <div>
+                        <input class="input" type="text" placeholder="Producto" name="title">
+                    </div>
+                <label class="h6 fst-italic">Precio</label>
+                    <div>
+                        <input class="input is-success" type="text" placeholder="Precio" name="price">
+                    </div>
+                <label class="h6 fst-italic">Foto URL</label>
+                    <div>
+                        <input class="input is-success" type="text" placeholder="Imagen" name="thumbnail">
+                    </div>
+                        <br>
+                <div>
+                  <button class="btn btn-success">Enviar</button>
+                </div>
+
+        </form>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+
+</body>

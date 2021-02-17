@@ -10,7 +10,7 @@ router.post('/productos', async (req,res) => {
   const products = await import('./Modulos').then(res => res.default)
   let prod = new products(productos)
   prod.addProduct(req.body)
-  res.render("carga.pug");
+  res.render("pages/carga.ejs");
   //res.sendStatus(201)
 })
 
@@ -31,12 +31,12 @@ router.delete('/productos/borrar/:id',async (req,res) => {
 //////////////////////////Plantillas
     router.get("/vista", (req, res) => {
       //  const products = await import('./Modulos').then(res => res.default)
-      res.render("vista.pug",{productos});
+      res.render("pages/vista.ejs",{productos});
         
     });
     router.get("/carga", (req, res) => {
       //  const products = await import('./Modulos').then(res => res.default)
-      res.render("carga.pug");
+      res.render("pages/carga.ejs");
         
     });
 /////////////////////////////////////////////////////////////////
