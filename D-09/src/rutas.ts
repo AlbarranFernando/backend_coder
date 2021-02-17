@@ -4,7 +4,7 @@ const router = express.Router()
 
 var productos: any[] = []
 
-router.get('/productos', async (_req,res) => {
+router.get('/productos', async (req,res) => {
   const products = await import('./Modulos').then(res => res.default)
   let prod = new products(productos)
   res.status(200).json(prod.getProducts())
