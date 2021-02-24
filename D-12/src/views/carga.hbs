@@ -1,0 +1,118 @@
+{{> lovedChamps}}
+<br>
+{{> hatedChamps}}
+<br>
+<h2 class="text-center text-primary">Ingrese Producto</h2>
+
+<section class="section">
+        <form action="/api/productos/" enctype="application/x-www-form-urlencoded" method="POST" class="container"id="myForm">
+            
+                <label class="h6 fst-italic">Nombre</label>
+                    <div>
+                        <input class="input" type="text" placeholder="Producto" id="title">
+                    </div>
+                <label class="h6 fst-italic">Precio</label>
+                    <div>
+                        <input class="input is-success" type="text" placeholder="Precio" id="price">
+                    </div>
+                <label class="h6 fst-italic">Foto URL</label>
+                    <div>
+                        <input class="input is-success" type="text" placeholder="Imagen" id="thumbnail">
+                    </div>
+                        <br>
+                <div >
+                  <button class="btn btn-success">Enviar</button>
+                </div>
+
+        </form>
+    </section>
+
+
+   {{!--  ///////////////websockets/////////////////// --}}
+
+   {{!-- /////Tabla//////////////// --}}
+   <br>
+    <table class="table">
+              <thead>
+        <tr class="table table-primary">
+          <th scope="col">id</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Precio</th>
+          <th scope="col">Foto</th>
+    
+        </tr>
+      </thead>
+      <tbody id="messages" >
+
+        </tbody>
+    </table>
+  {{!-- /////Tabla//////////////// --}}
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script >
+        const socket = io();
+            ////////Envio Form////////////////
+        const form = document.getElementById('myForm')
+        const title = document.getElementById('title')
+        const price = document.getElementById('price')
+        const thumbnail = document.getElementById('thumbnail')
+        let messages = document.getElementById('messages')
+
+        form.addEventListener('submit', (event) => { 
+           event.preventDefault()
+          
+             let  prod = { title:title.value, price:price.value ,thumbnail:thumbnail.value  };
+            if (title.value) {
+                socket.emit('mensaje de chat', prod)
+                title.value = ""
+                price.value = ""
+                thumbnail.value = ""
+            }
+
+        })
+          ////////Envio Form////////////////
+                /////////////Tabla Dinamica/////////////////
+        socket.on('mensaje de chat', (productos) => {
+            console.log(productos)
+
+             while (messages.firstChild){
+                messages.removeChild(messages.firstChild);
+                    }
+
+                productos.forEach((prod)=>{ 
+
+                    let fila = document.createElement('tr')
+                    let filaId = document.createElement('td')
+                    let filaTitle = document.createElement('td')
+                    let filaPrice = document.createElement('td')
+                    let filaThumbnail = document.createElement('td')
+                    let imagen = document.createElement('img')
+                    fila.appendChild(filaId)
+                    fila.appendChild(filaTitle)
+                    fila.appendChild(filaPrice)
+                    fila.appendChild(filaThumbnail)
+                    filaThumbnail.appendChild(imagen)
+                    fila.className = "table-success"
+                    filaId.textContent = prod.id
+                    filaTitle.textContent = prod.title
+                    filaPrice.textContent = prod.price
+                    var src = document.createAttribute("src");
+                    var width = document.createAttribute("width");
+                    var height = document.createAttribute("height");   
+                    src.value = prod.thumbnail;  
+                    width.value = "50";   
+                    height.value = "50";                         
+                    imagen.setAttributeNode(src);
+                    imagen.setAttributeNode(width);
+                    imagen.setAttributeNode(height);
+                    messages.appendChild(fila)
+ 
+                     })  
+      
+        })
+        socket.on('mensaje', function(payload) {
+            console.log(payload)
+ 
+        })
+
+  </script>

@@ -1,13 +1,7 @@
   
- interface Product {
-     id: string;
-     title: string;
-     price: number;
-     thumbnail: string;
- }
  class Modulos {
 
-     constructor(public products:Product[]){}
+     constructor(public products:any){}
 
      addProduct(prod: any) {
         const {title, price, thumbnail} = prod
@@ -29,7 +23,7 @@
 
      findOneProduct(id: string){
         let producto = this.products.find((prod:any) => prod.id === id);
-        if (!producto) producto = [] as any
+        if (!producto) producto = {error : 'producto no encontrado'}
         return producto
      }
 
@@ -43,7 +37,7 @@
            thumbnail,
          }
          let producto = this.products.find((prod:any) => prod.id === id);
-         if (!producto) producto = [] as any
+         if (!producto) producto = {error : 'producto no encontrado'}
             else  {this.products.splice(this.products.indexOf(producto), 1,productoAct)
                      producto = productoAct
                  }
@@ -52,7 +46,7 @@
 
       delProduct(id: string){
       let producto = this.products.find((prod:any) => prod.id === id);
-      if (!producto) producto = [] as any
+      if (!producto) producto = {error : 'producto no encontrado'}
          else  this.products.splice(this.products.indexOf(producto), 1)
             
       return producto
