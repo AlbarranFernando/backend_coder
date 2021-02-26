@@ -67,31 +67,16 @@ router.get("/productos/carga",async (req, res) => {
   res.render("carga")
 });
 ///////////////////////Plantillas fin/////////
-////////////////archivo////////////////
-/* let productosasd = async () => {
-  const historial = await import('./putFile').then(res => res.default)
-  let hist = new Archivo ('historialChat.txt');
-  hist.addProduct(message)
-  io.emit('mensaje de chat', productos)
-}
-
-
-let producto01 = new Archivo ('Productos.txt');
-producto01.leer();
-
-producto01.guardarid('silla', 250, 'https://sarlanga/200'); */
-
+////////////////Archivo////////////////
 
 var hist = async (asd) => {
-           
+          
   try {
 
       let itProd =  JSON.stringify( asd)
-
       await fs.promises.appendFile('historialChat.txt',`${itProd}`)
   }
   catch (err) {
-
   console.log(err)
   }
 }
@@ -99,17 +84,10 @@ var hist = async (asd) => {
 //producto01.borrar();
 ///////////////////////////////////
 
-
-
 app.use('/',router)
 
 http.listen(3000, () => {
   console.log('Running on port 3000');
 
 }) 
-
-
-
-
-
 
