@@ -99,7 +99,6 @@
             let telegram = { email:email.value, mensaje: menChat.value, fecha: fechForm}
             if (email.value) {
                 socket.emit('Centro de chat', telegram)
-                email.value = ""
                 menChat.value = ""
             }
 

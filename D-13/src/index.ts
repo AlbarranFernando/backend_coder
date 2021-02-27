@@ -63,7 +63,7 @@ app.engine(
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname + '/views'));
 app.use(express.static("public"));
-router.get("/productos/carga",async (req, res) => {
+router.get("/",async (req, res) => {
   res.render("carga")
 });
 ///////////////////////Plantillas fin/////////
@@ -86,8 +86,10 @@ var hist = async (asd) => {
 
 app.use('/',router)
 
-http.listen(3000, () => {
-  console.log('Running on port 3000');
+  var PORT = process.env.PORT || 3000;
+  http.listen(PORT, () => {
+    console.log(`Running on port ${PORT}`);
 
-}) 
+  });
+
 
