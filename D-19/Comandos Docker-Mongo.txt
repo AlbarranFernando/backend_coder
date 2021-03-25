@@ -1,0 +1,66 @@
+
+docker pull mongo
+docker run -d -p 27017:27017 --name mongodb mongo:latest
+docker exec -it mongodb bash
+mongo
+show dbs
+use ecommerce
+db.mensajes.save({"email":"asd@asd","mensaje":"Hola","fecha":"26/2/2021  22:10:9"})
+db.mensajes.save({"email":"zarlanga@gmail.com","mensaje":"Hola, todo bien!!","fecha":"26/2/2021  22:10:59"})
+db.mensajes.save({"email":"zarlanga@gmail.com","mensaje":"Vos ,como andas?","fecha":"26/2/2021  22:11:32"})
+db.mensajes.save({"email":"asd@asd","mensaje":"Por aca todo bien, y por your house?","fecha":"26/2/2021  22:13:20"})
+db.mensajes.save({"email":"zarlanga@gmail.com","mensaje":"Fantastico, mejor no sirve..","fecha":"26/2/2021  22:13:48"})
+db.mensajes.save({"email":"asd@asd","mensaje":"Holis!!","fecha":"27/2/2021  9:45:1"})
+db.mensajes.save({"email":"zarlanga@gmail.com","mensaje":"Se puede?","fecha":"27/2/2021  10:6:42"})
+db.mensajes.save({"email":"zarlanga@gmail.com","mensaje":"Se ve que nop","fecha":"27/2/2021  10:11:35"})
+db.mensajes.save({"email":"xx01@yahaa","mensaje":"Hola!","fecha":"27/2/2021  10:27:51"})
+db.mensajes.save({"email":"zarlanga@gmail.com","mensaje":"Ay sip!!","fecha":"27/2/2021  10:28:10"})
+db.mensajes.find()
+db.productos.save({"title":"Pizarra","price":120,"thumbnail":"https://cdn3.iconfinder.com/data/icons/education-209/64/board-math-class-school-512.png"})
+db.productos.save({"title":"Sombrero","price":580,"thumbnail":"https://cdn3.iconfinder.com/data/icons/education-209/64/graduation-square-academic-cap-school-512.png"})
+db.productos.save({"title":"Mochila","price":900,"thumbnail":"https://cdn3.iconfinder.com/data/icons/education-209/64/bag-pack-container-school-512.png"})
+db.productos.save({"title":"Cuaderno","price":1280,"thumbnail":"https://cdn3.iconfinder.com/data/icons/education-209/64/book-note-paper-school-512.png"})
+db.productos.save({"title":"Microscopio","price":1700,"thumbnail":"https://cdn3.iconfinder.com/data/icons/education-209/64/microscope-lab-science-school-512.png"})
+db.productos.save({"title":"Lapiz","price":2300,"thumbnail":"https://cdn3.iconfinder.com/data/icons/education-209/64/pencil-pen-stationery-school-512.png"})
+db.productos.save({"title":"Camion","price":2860,"thumbnail":"https://cdn3.iconfinder.com/data/icons/education-209/64/bus-vehicle-transport-school-512.png"})
+db.productos.save({"title":"Reloj","price":3350,"thumbnail":"https://cdn3.iconfinder.com/data/icons/education-209/64/clock-stopwatch-timer-time-512.png"})
+db.productos.save({"title":"Calculadora","price":4320,"thumbnail":"https://cdn3.iconfinder.com/data/icons/education-209/64/calculator-math-tool-school-512.png"})
+db.productos.save({"title":"Regla","price":4990,"thumbnail":"https://cdn3.iconfinder.com/data/icons/education-209/64/ruler-triangle-stationary-school-512.png"})
+db.productos.find()
+db.productos.estimatedDocumentCount()
+db.mensajes.estimatedDocumentCount()
+db.productos.save({"title":"Avion","price":5000,"thumbnail":"https://cdn3.iconfinder.com/data/icons/education-209/64/plane-paper-toy-science-school-512.png"})
+db.productos.find({"title":"Lapiz"})
+db.productos.find({"price":{$lt: 1000}})
+db.productos.find({ $and: [ {"price":{$gt: 1000}} , {"price":{$lt: 3000}} ] })
+db.productos.find({"price":{$gt: 3000}})
+db.productos.find({},{"title":1}).sort({"price":1}).limit(1).skip(2) 
+db.productos.update({},{$set:{"Stock":100}},{multi:true})
+db.productos.find()
+db.productos.update({"price":{$gt: 4000}},{$set:{"Stock":0}},{multi:true})
+db.productos.find()
+db.productos.remove({"price":{$lt: 1000}})
+db.productos.find()
+
+db.createUser(
+  {
+    user: "pepe",
+    pwd: "asd456",
+    roles: [
+       { role: "read", db: "ecommerce" }
+    ]
+  }
+)
+Ctrl+C
+mongo -u pepe -p asd456 --authenticationDatabase ecommerce
+use ecommerce
+db.productos.find()
+db.productos.save({"title":"Avion","price":5000,"thumbnail":"https://cdn3.iconfinder.com/data/icons/education-209/64/plane-paper-toy-science-school-512.png"})
+
+
+
+
+
+
+
+
