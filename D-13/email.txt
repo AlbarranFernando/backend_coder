@@ -1,0 +1,41 @@
+﻿{"email":"asd@asd","mensaje":"Hola","fecha":"26/2/2021  22:10:9"}
+{"email":"zarlanga@gmail.com","mensaje":"Hola, todo bien!!","fecha":"26/2/2021  22:10:59"}
+{"email":"zarlanga@gmail.com","mensaje":"Vos ,como andas?","fecha":"26/2/2021  22:11:32"}
+{"email":"asd@asd","mensaje":"Por aca todo bien, y por your house?","fecha":"26/2/2021  22:13:20"}
+{"email":"zarlanga@gmail.com","mensaje":"Fantastico, mejor no sirve..","fecha":"26/2/2021  22:13:48"}
+{"email":"asd@asd","mensaje":"Holis!!","fecha":"27/2/2021  9:45:1"}
+{"email":"zarlanga@gmail.com","mensaje":"Se puede?","fecha":"27/2/2021  10:6:42"}
+{"email":"zarlanga@gmail.com","mensaje":"Se ve que nop","fecha":"27/2/2021  10:11:35"}
+{"email":"xx01@yahaa","mensaje":"Hola!","fecha":"27/2/2021  10:27:51"}
+{"email":"zarlanga@gmail.com","mensaje":"Ay sip!!","fecha":"27/2/2021  10:28:10"}
+{"email":"xx01@yahaa","mensaje":"Consulta, tiene pizzara luminosa?","fecha":"27/2/2021  10:29:5"}
+{"email":"zarlanga@gmail.com","mensaje":"Para la venta? o para prestamo?","fecha":"27/2/2021  10:29:26"}
+{"email":"xx01@yahaa","mensaje":"Para la venta, pq los préstamos no suelo devolverlos","fecha":"27/2/2021  10:29:57"}
+{"email":"zarlanga@gmail.com","mensaje":"mmm se llama robo eso.....","fecha":"27/2/2021  10:30:13"}
+{"email":"zarlanga@gmail.com","mensaje":"Adivino que usted es k entoces..","fecha":"27/2/2021  10:30:26"}
+{"email":"xx01@yahaa","mensaje":"Nop pq fue con consentimiento","fecha":"27/2/2021  10:30:31"}
+{"email":"zarlanga@gmail.com","mensaje":"Entonces seri prestamo/donacion?","fecha":"27/2/2021  10:31:12"}
+{"email":"xx01@yahaa","mensaje":"Si póngale la categoría que lo haga sentir mejor","fecha":"27/2/2021  10:31:45"}
+{"email":"xx01@yahaa","mensaje":"Pero en este caso quiero comprar pizzara luminosa","fecha":"27/2/2021  10:32:6"}
+{"email":"xx01@yahaa","mensaje":"Tiene?","fecha":"27/2/2021  10:32:13"}
+{"email":"zarlanga@gmail.com","mensaje":"Bueno, invento es categoria y se lo envio!!","fecha":"27/2/2021  10:32:25"}
+{"email":"zarlanga@gmail.com","mensaje":"Tengo pizarra y le puedo agregar un foquito atras, pero no le veo utilidad realmente...","fecha":"27/2/2021  10:33:0"}
+{"email":"zarlanga@gmail.com","mensaje":"Sigue ahi?","fecha":"27/2/2021  10:34:39"}
+{"email":"xx01@yahaa","mensaje":"Si acá estoy de vuelta","fecha":"27/2/2021  10:37:50"}
+{"email":"zarlanga@gmail.com","mensaje":"Bueno, le empaqueto el pedido y le mando un link de pago","fecha":"27/2/2021  10:38:56"}
+{"email":"xx01@yahaa","mensaje":"Bien! Muchas gracias por satisfacer las necesidades del cliente","fecha":"27/2/2021  10:41:45"}
+{"email":"zarlanga@gmail.com","mensaje":"Al ultimo de la lista le agregue los items...","fecha":"27/2/2021  10:42:52"}
+{"email":"zarlanga@gmail.com","mensaje":"👍","fecha":"27/2/2021  10:44:19"}
+{"email":"zarlanga@gmail.com","mensaje":"😘❤️","fecha":"27/2/2021  10:45:38"}
+{"email":"zarlanga@gmail.com","mensaje":"💙","fecha":"27/2/2021  10:45:59"}
+{"email":"xx01@yahaa","mensaje":"😍","fecha":"27/2/2021  11:1:15"}
+{"email":"xx01@yahaa","mensaje":"","fecha":"27/2/2021  11:1:19"}
+{"email":"xx01@yahaa","mensaje":"👍😃","fecha":"27/2/2021  11:1:28"}
+{"email":"gonza@gonza.com","mensaje":"que onda ","fecha":"27/2/2021  12:0:49"}
+{"email":"gonza@gonza.com","mensaje":"como va todo","fecha":"27/2/2021  12:0:54"}
+{"email":"gonza@gonza.com","mensaje":"","fecha":"27/2/2021  12:0:54"}
+{"email":"gonza@gonza.com","mensaje":"bien","fecha":"27/2/2021  12:1:9"}
+{"email":"gonza@gonza.com","mensaje":"","fecha":"27/2/2021  12:1:12"}
+{"email":"gonza@gonza.com","mensaje":"puedo mandar mensajes vacios tmb","fecha":"27/2/2021  12:1:20"}
+{"email":"gonza@gonza.com","mensaje":"q tal eso","fecha":"27/2/2021  12:1:23"}
+{"email":"zarlanga@gmail.com","mensaje":"Si se pueden  vacios, por si queres decir nada....","fecha":"27/2/2021  12:9:42"}

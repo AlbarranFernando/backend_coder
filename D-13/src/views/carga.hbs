@@ -95,7 +95,7 @@
         botChat.addEventListener("click",(event) => {
             var f = new Date();
             var fechForm=(f.getDate() + "/" + (f.getMonth() +1) + "/" + f.getFullYear() + "  " + f.getHours() + ":"+f.getMinutes() + ":" + f.getSeconds());
-            console.log(fechForm)
+            
             let telegram = { email:email.value, mensaje: menChat.value, fecha: fechForm}
             if (email.value) {
                 socket.emit('Centro de chat', telegram)
@@ -134,8 +134,7 @@
         })
 ////////////////////Fin Chat ///////////////////
         socket.on('mensaje de chat', (productos,chat) => {
-            console.log(productos)
-               
+                          
              while (messages.firstChild){
                 messages.removeChild(messages.firstChild);
                     }

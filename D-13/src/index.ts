@@ -36,7 +36,7 @@ io.on('connection', (socket) =>{
         socket.on('Centro de chat', (textoChat) => { 
           msgs.push(textoChat)
           hist(textoChat)
-          console.log(msgs);
+          
           io.emit('Centro de chat', msgs)
 
         }) 
