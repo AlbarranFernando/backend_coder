@@ -1,0 +1,49 @@
+# Lo primero es descargar la imagen en tu Docker
+docker pull mysql
+
+# construye un contenedor llamado ‘mysql-platzi’ con la versión más reciente (mysql:latest) y le asigna al usuario root del sistema, la clave ‘password’
+docker run --name mysql-platzi -e MYSQL_ROOT_PASSWORD=password -d mysql:latest
+# Exponer el puerto de su contenedor para acceder desde MySQL Workbench
+docker run --name mysql-library -e MYSQL_ROOT_PASSWORD=password -p 3306:3306 -d mysql:latest
+
+# Luego puedes acceder a la línea de comando del contenedor de MySQL usando.
+docker exec -it mysql-platzi bash
+
+# Finalmente, se ingresa base de datos por medio del siguiente comando
+mysql -u root -ppassword
+
+-------------------------------------------------------------------------------
+create imagen	#Crear un contenedor
+run imagen	#Crear+Arrancar un contenedor
+
+start contenedor	#Arrancar contenedor	
+stop contenedor		#Parar contenedor
+kill contenedor		#Desenchufa contenedor
+restart contenedor	#stop+start
+rm contenedor		#Destruye el contenedor
+pause, unpause		#Eso
+
+--name,	#Nombre asociado al contenedor
+-e,	#Definir variables de entorno para el contenedor
+-d,	#Levanta el contenedor en segundo plano, dejando el prompt libre mientras el contenedor sigue activo. 
+-p 9000:9000,	# Mapeamos el puerto 9000 de nuestro equipo con el 9000 del contenedor
+--mount
+exec contenedor	arg..	#Ejecuta un comando en un contenedor existente
+-it,		#--interactive # attach stdin (interactive) + --tty # pseudo-tty(mantener el contenedor en ejecución e incluso interactuar con él)
+
+ps	#Contenedores Corriendo 
+ps -a	#Todos los contenedores
+
+------------------Si deseamos persistir (guardar) los datos en un volumen de docker:---------------------------
+# Create Volumen
+docker volume create mysql-db-data
+
+# create image and add volumen
+docker run -d -p 33060:3306 --name mysql-db  -e MYSQL_ROOT_PASSWORD=secret --mount src=mysql-db-data,dst=/var/lib/mysql mysql
+
+# exec the database
+docker exec -it mysql-db mysql -p
+#p: secret
+
+-------------------------------------------
+https://dockerlabs.collabnix.com/docker/cheatsheet/
