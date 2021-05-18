@@ -1,0 +1,27 @@
+[
+    {
+
+        "autor" : {
+            "email" : "xalbarranx@gmail.com",
+            "nombre" : "Fernando",
+            "apellido" : "Albarran",
+            "edad" : "45",
+            "alias" : "capo",
+            "avatar" : "http://placeimg.com/640/480/business"
+        },
+        "mensaje" : "asdf"
+    },
+    {
+     
+        "autor" : {
+            "email" : "xalbarranx@hotmail.com",
+            "nombre" : "Fernando",
+            "apellido" : "Albarran",
+            "edad" : "45",
+            "alias" : "capo",
+            "avatar" : "http://placeimg.com/640/480/business"
+        },
+        "mensaje" : "qqqqqq"
+
+    }
+  ]

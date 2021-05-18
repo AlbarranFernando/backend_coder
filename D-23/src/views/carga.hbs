@@ -1,0 +1,286 @@
+{{> lovedChamps}}
+<br>
+{{> hatedChamps}}
+<br>
+<script src="https://cdn.jsdelivr.net/npm/normalizr@3.6.1/dist/normalizr.browser.min.js"></script>
+<h2 class="text-center text-primary">Ingrese Producto</h2>
+
+<section class="section">
+        <form action="/api/productos/" enctype="application/x-www-form-urlencoded" method="POST" class="container"id="myForm">
+            
+                <label class="h6 fst-italic">Nombre</label>
+                    <div>
+                        <input class="input" type="text" placeholder="Producto" id="title">
+                    </div>
+                <label class="h6 fst-italic">Precio</label>
+                    <div>
+                        <input class="input is-success" type="text" placeholder="Precio" id="price">
+                    </div>
+                <label class="h6 fst-italic">Foto URL</label>
+                    <div>
+                        <input class="input is-success" type="text" placeholder="Imagen" id="thumbnail">
+                    </div>
+                        <br>
+                <div >
+                  <button class="btn btn-success">Enviar</button>
+                </div>
+
+        </form>
+    </section>
+
+
+   {{!--  ///////////////websockets/////////////////// --}}
+
+   {{!-- /////Tabla//////////////// --}}
+   <br>
+    <table class="table">
+       <thead>
+        <tr class="table table-primary">
+          <th scope="col">id</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Precio</th>
+          <th scope="col">Foto</th>
+    
+        </tr>
+      </thead>
+      <tbody id="messages" >
+
+        </tbody>
+    </table>
+  {{!-- /////Tabla//////////////// --}}
+ {{!-- /////CHAT//////////////// --}}
+<div id="cChat" class="p-3" style="background-color:#c8d4d1">
+
+    <h2 class="ms-5 text-primary">Centro de Mensajes</h2>
+    <h3 class="ms-5 text-primary" id=compress >(Compresion:62%)</h3>
+            <div>
+                <input class="input ms-5 " type="email" placeholder="zarlanga@gmail.com" id="email">
+            </div>
+             <div>
+                <input class="input ms-5 " type="text" placeholder="Nombre" id="nombre">
+            </div>
+            <div>
+                <input class="input ms-5 " type="text" placeholder="Apellido" id="apellido">
+            </div>
+            <div>
+                <input class="input ms-5 " type="text" placeholder="Edad" id="edad">
+            </div>
+            <div>
+                <input class="input ms-5 " type="text" placeholder="Alias" id="alias">
+            </div>
+            <div>
+                <input class="input ms-5 " type="text" placeholder="Avatar" id="avatar">
+            </div>           
+
+            <hr>
+            <div id="textChat">
+
+            </div>
+            <hr>
+            <div>
+                <input class="input is-success ms-5" type="text" placeholder="Ingrese un mensaje... " id="menChat">
+                <button  class="btn btn-primary ms-2" id="botChat">Enviar!</button>
+            </div>
+</div>
+ {{!-- /////CHAT//////////////// --}}
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script >
+        const socket = io();
+            ////////Envio Form////////////////
+        const form = document.getElementById('myForm')
+        const title = document.getElementById('title')
+        const price = document.getElementById('price')
+        const thumbnail = document.getElementById('thumbnail')
+        let messages = document.getElementById('messages')
+        ///////Chat/////
+        const email = document.getElementById('email')
+        const menChat = document.getElementById('menChat')  
+        const botChat = document.getElementById('botChat')  
+        const textChat = document.getElementById('textChat') 
+        const nombre = document.getElementById('nombre')
+        const apellido = document.getElementById('apellido')
+        const edad = document.getElementById('edad')
+        const alias = document.getElementById('alias')
+        const avatar = document.getElementById('avatar')    
+        ////////////
+        form.addEventListener('submit', (event) => { 
+           event.preventDefault()
+          
+             let  prod = { title:title.value, price:price.value ,thumbnail:thumbnail.value  };
+            if (title.value) {
+                socket.emit('mensaje de chat', prod)
+                title.value = ""
+                price.value = ""
+                thumbnail.value = ""
+            }
+        })
+        botChat.addEventListener("click",(event) => {
+            var f = new Date();
+            var fechForm=(f.getDate() + "/" + (f.getMonth() +1) + "/" + f.getFullYear() + "  " + f.getHours() + ":"+f.getMinutes() + ":" + f.getSeconds());
+            
+            let telegram = {
+                            autor:{
+                                email:email.value, 
+                                nombre:nombre.value,
+                                apellido:apellido.value,
+                                edad:edad.value,
+                                alias:alias.value,
+                                avatar:avatar.value
+                            },
+                            mensaje: menChat.value,
+                            fecha: fechForm,
+                            }
+
+            
+            if (email.value) {
+                socket.emit('Centro de chat', telegram)
+                menChat.value = ""
+            }
+
+        })    
+
+          ////////Envio Form////////////////
+                /////////////Tabla Dinamica/////////////////
+                //////chat/////
+        socket.on('Centro de chat', (chat) => {
+                  let mensajesNsize = JSON.stringify(chat).length
+                    console.log("FRONT NORM",chat, mensajesNsize)
+                    
+                    const normalize = normalizr.normalize;
+                    const denormalize = normalizr.normalize;
+                    const schema = normalizr.schema
+
+                ///////////////////ENTIDADES INICIO//////////////////////////
+                const user = new schema.Entity('users',{},{idAttribute: 'email'});
+                const comentario = new schema.Entity('comentario', {
+                autor: user},{idAttribute:'_id'}
+                );
+                const posts = new schema.Entity('posts', {
+                posts: [comentario]
+                },{idAttribute: 'id'});
+                ///////////////////ENTIDADES FIN//////////////////////////
+
+                    const pas = JSON.stringify(chat)
+                    console.log("Nresult",chat.result);
+                    console.log("Posts",posts);
+                    console.log("Entities",chat.entities);    
+
+                    let denormalizeData =normalizr.denormalize(chat.result,posts,chat.entities)
+                    console.log(chat.result)
+                    console.log(chat.entities)
+                    
+                    let mensajesDNsize = JSON.stringify(denormalizeData).length
+                    let comp = Math.round(mensajesNsize/mensajesDNsize *10000)/100
+
+                    console.log("FRONT DENORM",denormalizeData,mensajesDNsize)
+                    
+                       const porComp = document.getElementById('compress')
+                       porComp.textContent = `(Compresion:${comp}%)`
+
+                while (textChat.firstChild){
+                textChat.removeChild(textChat.firstChild);
+                    }
+                   
+                    
+                //  srca="https://cdn.jsdelivr.net/npm/normalizr@3.6.1/dist/normalizr.browser.js"
+                   
+                 //  const normalizr = srca;
+
+                  //  console.log(normalize.schema.Entity)
+
+                    
+                   //src="https://cdn.jsdelivr.net/npm/normalizr@3.6.1/dist/normalizr.browser.min.js";
+                  // const normalizedData = normalize(allChat ,posts);
+                    //const normalizr = require("normalizr");
+
+
+
+
+
+                   console.log("FRONT DENORM",denormalizeData.posts,"Solo Posts")
+            denormalizeData.posts.forEach((msnFile)=>{ 
+
+                   console.log( msnFile, "TTTTTTTTTTTTTTTTTTTTT")
+
+                let pEmail = document.createElement('p')
+                let pFecha = document.createElement('p')
+                let pMensaje = document.createElement('p')
+                let pAvatar = document.createElement('img')
+                let mfila = document.createElement('div')
+                mfila.appendChild(pEmail)
+                mfila.appendChild(pFecha)
+                mfila.appendChild(pMensaje)
+                mfila.appendChild(pAvatar)
+                textChat.appendChild(mfila)
+
+                mfila.className = "d-flex"
+                pEmail.className = "text-primary fw-bold"
+                pFecha.className = "fechaM"
+                pMensaje.className = "text-success fst-italic"
+
+                pEmail.textContent ="  "+ msnFile.autor.email + " "
+                pFecha.textContent = " ["+ msnFile.fecha+"] "
+                pMensaje.textContent = " : " +msnFile.mensaje
+
+                    var src = document.createAttribute("src");
+                    var width = document.createAttribute("width");
+                    var height = document.createAttribute("height");   
+                    src.value = msnFile.autor.avatar;  
+                    width.value = "50";   
+                    height.value = "50";                         
+                    pAvatar.setAttributeNode(src);
+                    pAvatar.setAttributeNode(width);
+                    pAvatar.setAttributeNode(height);
+
+
+
+               // pAvatar. = "src="+ msnFile.avatar
+ 
+               })
+        })
+////////////////////Fin Chat ///////////////////
+        socket.on('mensaje de chat', (productos,chat) => {
+                          
+             while (messages.firstChild){
+                messages.removeChild(messages.firstChild);
+                    }
+
+                productos.forEach((prod)=>{ 
+
+                    let fila = document.createElement('tr')
+                    let filaId = document.createElement('td')
+                    let filaTitle = document.createElement('td')
+                    let filaPrice = document.createElement('td')
+                    let filaThumbnail = document.createElement('td')
+                    let imagen = document.createElement('img')
+                    fila.appendChild(filaId)
+                    fila.appendChild(filaTitle)
+                    fila.appendChild(filaPrice)
+                    fila.appendChild(filaThumbnail)
+                    filaThumbnail.appendChild(imagen)
+                    fila.className = "table-success"
+                    filaId.textContent = prod.id
+                    filaTitle.textContent = prod.title
+                    filaPrice.textContent = prod.price
+                    var src = document.createAttribute("src");
+                    var width = document.createAttribute("width");
+                    var height = document.createAttribute("height");   
+                    src.value = prod.thumbnail;  
+                    width.value = "50";   
+                    height.value = "50";                         
+                    imagen.setAttributeNode(src);
+                    imagen.setAttributeNode(width);
+                    imagen.setAttributeNode(height);
+                    messages.appendChild(fila)
+ 
+                     })  
+      
+        })
+        socket.on('mensaje', function(payload) {
+            console.log(payload)
+ 
+        })
+
+  </script>
+<script src="https://cdn.jsdelivr.net/npm/normalizr@3.6.1/dist/normalizr.browser.min.js"></script>
