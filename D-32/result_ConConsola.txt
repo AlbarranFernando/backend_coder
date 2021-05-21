@@ -1,0 +1,217 @@
+Statistical profiling result from ConConsola-v8.log, (5081 ticks, 3 unaccounted, 0 excluded).
+
+ [Shared libraries]:
+   ticks  total  nonlib   name
+   4390   86.4%          C:\WINDOWS\SYSTEM32\ntdll.dll
+    635   12.5%          C:\Program Files\nodejs\node.exe
+      2    0.0%          C:\WINDOWS\System32\KERNELBASE.dll
+
+ [JavaScript]:
+   ticks  total  nonlib   name
+      8    0.2%   14.8%  LazyCompile: *resolve path.js:130:10
+      6    0.1%   11.1%  LazyCompile: *wrap C:\Users\feruyo\Google Drive\CoderHouse\BckEnd\DesafiosBackend\D-32\node_modules\handlebars\dist\cjs\handlebars\compiler\code-gen.js:101:22
+      4    0.1%    7.4%  LazyCompile: *castChunk C:\Users\feruyo\Google Drive\CoderHouse\BckEnd\DesafiosBackend\D-32\node_modules\handlebars\dist\cjs\handlebars\compiler\code-gen.js:52:19
+      3    0.1%    5.6%  LazyCompile: *parse C:\Users\feruyo\Google Drive\CoderHouse\BckEnd\DesafiosBackend\D-32\node_modules\handlebars\dist\cjs\handlebars\compiler\parser.js:269:30
+      3    0.1%    5.6%  LazyCompile: *normalizeString path.js:52:25
+      3    0.1%    5.6%  LazyCompile: *SourceNode_walk C:\Users\feruyo\Google Drive\CoderHouse\BckEnd\DesafiosBackend\D-32\node_modules\source-map\lib\source-node.js:221:53
+      2    0.0%    3.7%  LazyCompile: *next C:\Users\feruyo\Google Drive\CoderHouse\BckEnd\DesafiosBackend\D-32\node_modules\express\lib\router\index.js:176:16
+      1    0.0%    1.9%  RegExp: ^([a-zA-Z]:|[\\\/]{2}[^\\\/]+[\\\/]+[^\\\/]+)?([\\\/])?([\s\S]*?)$
+      1    0.0%    1.9%  RegExp: ^(?:\{\{(~)?\s*else\b)
+      1    0.0%    1.9%  RegExp: ^(?:\{\{(~)?\*?)
+      1    0.0%    1.9%  RegExp: ^(?:\{\{(~)?#>)
+      1    0.0%    1.9%  RegExp: ^(?:\{\{(~)?![\s\S]*?\}\})
+      1    0.0%    1.9%  RegExp: ^(?:(~)?\}\})
+      1    0.0%    1.9%  RegExp: (?:\r\n?|\n).*
+      1    0.0%    1.9%  LazyCompile: *toNamespacedPath path.js:549:19
+      1    0.0%    1.9%  LazyCompile: *render C:\Users\feruyo\Google Drive\CoderHouse\BckEnd\DesafiosBackend\D-32\node_modules\express-handlebars\lib\express-handlebars.js:143:15
+      1    0.0%    1.9%  LazyCompile: *push C:\Users\feruyo\Google Drive\CoderHouse\BckEnd\DesafiosBackend\D-32\node_modules\handlebars\dist\cjs\handlebars\compiler\javascript-compiler.js:868:22
+      1    0.0%    1.9%  LazyCompile: *processTicksAndRejections internal/process/task_queues.js:69:35
+      1    0.0%    1.9%  LazyCompile: *internalNameLookup C:\Users\feruyo\Google Drive\CoderHouse\BckEnd\DesafiosBackend\D-32\node_modules\handlebars\dist\cjs\handlebars\compiler\javascript-compiler.js:66:50
+      1    0.0%    1.9%  LazyCompile: *generateList C:\Users\feruyo\Google Drive\CoderHouse\BckEnd\DesafiosBackend\D-32\node_modules\handlebars\dist\cjs\handlebars\compiler\code-gen.js:143:38
+      1    0.0%    1.9%  LazyCompile: *dirname path.js:582:10
+      1    0.0%    1.9%  LazyCompile: *cpus os.js:103:14
+      1    0.0%    1.9%  LazyCompile: *compile C:\Users\feruyo\Google Drive\CoderHouse\BckEnd\DesafiosBackend\D-32\node_modules\handlebars\dist\cjs\handlebars\compiler\javascript-compiler.js:73:28
+      1    0.0%    1.9%  LazyCompile: *basename path.js:668:11
+      1    0.0%    1.9%  LazyCompile: *anonymous C:\Users\feruyo\Google Drive\CoderHouse\BckEnd\DesafiosBackend\D-32\node_modules\handlebars\dist\cjs\handlebars\compiler\parser.js:12:42
+      1    0.0%    1.9%  LazyCompile: *MustacheStatement C:\Users\feruyo\Google Drive\CoderHouse\BckEnd\DesafiosBackend\D-32\node_modules\handlebars\dist\cjs\handlebars\compiler\compiler.js:215:48
+      1    0.0%    1.9%  LazyCompile: *ContentStatement C:\Users\feruyo\Google Drive\CoderHouse\BckEnd\DesafiosBackend\D-32\node_modules\handlebars\dist\cjs\handlebars\compiler\compiler.js:228:46
+      1    0.0%    1.9%  LazyCompile: *<anonymous> C:\Users\feruyo\Google Drive\CoderHouse\BckEnd\DesafiosBackend\D-32\node_modules\source-map\lib\source-node.js:174:29
+      1    0.0%    1.9%  LazyCompile: *<anonymous> C:\Users\feruyo\Google Drive\CoderHouse\BckEnd\DesafiosBackend\D-32\node_modules\handlebars\dist\cjs\handlebars\runtime.js:360:47
+
+ [C++]:
+   ticks  total  nonlib   name
+
+ [Summary]:
+   ticks  total  nonlib   name
+     51    1.0%   94.4%  JavaScript
+      0    0.0%    0.0%  C++
+     23    0.5%   42.6%  GC
+   5027   98.9%          Shared libraries
+      3    0.1%          Unaccounted
+
+ [C++ entry points]:
+   ticks    cpp   total   name
+
+ [Bottom up (heavy) profile]:
+  Note: percentage shows a share of a particular caller in the total
+  amount of its parent calls.
+  Callers occupying less than 1.0% are not shown.
+
+   ticks parent  name
+   4390   86.4%  C:\WINDOWS\SYSTEM32\ntdll.dll
+
+    635   12.5%  C:\Program Files\nodejs\node.exe
+    402   63.3%    C:\Program Files\nodejs\node.exe
+     44   10.9%      LazyCompile: ~handleWriteReq internal/stream_base_commons.js:45:24
+     44  100.0%        LazyCompile: ~writeGeneric internal/stream_base_commons.js:141:22
+     44  100.0%          LazyCompile: ~Socket._writeGeneric net.js:760:42
+     44  100.0%            LazyCompile: ~Socket._write net.js:797:35
+     36    9.0%      LazyCompile: ~wrapSafe internal/modules/cjs/loader.js:1037:18
+     36  100.0%        LazyCompile: ~Module._compile internal/modules/cjs/loader.js:1091:37
+     36  100.0%          LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:1146:37
+     35   97.2%            LazyCompile: ~Module.load internal/modules/cjs/loader.js:973:33
+      1    2.8%            LazyCompile: *Module._load internal/modules/cjs/loader.js:822:24
+     28    7.0%      LazyCompile: ~stat internal/modules/cjs/loader.js:137:14
+     14   50.0%        LazyCompile: ~tryFile internal/modules/cjs/loader.js:352:17
+     14  100.0%          LazyCompile: ~tryExtensions internal/modules/cjs/loader.js:368:23
+     13   92.9%            LazyCompile: ~Module._findPath internal/modules/cjs/loader.js:606:28
+      1    7.1%            LazyCompile: ~tryPackage internal/modules/cjs/loader.js:306:20
+     14   50.0%        LazyCompile: ~Module._findPath internal/modules/cjs/loader.js:606:28
+     14  100.0%          LazyCompile: ~Module._resolveFilename internal/modules/cjs/loader.js:900:35
+     14  100.0%            LazyCompile: ~Module._load internal/modules/cjs/loader.js:822:24
+     26    6.5%      LazyCompile: ~realpathSync fs.js:1540:22
+     26  100.0%        LazyCompile: ~toRealPath internal/modules/cjs/loader.js:361:20
+     26  100.0%          LazyCompile: ~tryFile internal/modules/cjs/loader.js:352:17
+     23   88.5%            LazyCompile: ~tryExtensions internal/modules/cjs/loader.js:368:23
+      3   11.5%            LazyCompile: ~tryPackage internal/modules/cjs/loader.js:306:20
+     22    5.5%      C:\Program Files\nodejs\node.exe
+      4   18.2%        LazyCompile: *Glob._process C:\Users\feruyo\Google Drive\CoderHouse\BckEnd\DesafiosBackend\D-32\node_modules\glob\glob.js:298:36
+      4  100.0%          LazyCompile: ~Glob._processGlobStar2 C:\Users\feruyo\Google Drive\CoderHouse\BckEnd\DesafiosBackend\D-32\node_modules\glob\glob.js:631:45
+      4  100.0%            LazyCompile: ~<anonymous> C:\Users\feruyo\Google Drive\CoderHouse\BckEnd\DesafiosBackend\D-32\node_modules\glob\glob.js:625:43
+      2    9.1%        LazyCompile: ~readPackage internal/modules/cjs/loader.js:243:21
+      2  100.0%          LazyCompile: ~readPackageScope internal/modules/cjs/loader.js:278:26
+      1   50.0%            LazyCompile: ~trySelf internal/modules/cjs/loader.js:395:17
+      1   50.0%            LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:1146:37
+      2    9.1%        LazyCompile: *parse C:\Users\feruyo\Google Drive\CoderHouse\BckEnd\DesafiosBackend\D-32\node_modules\handlebars\dist\cjs\handlebars\compiler\parser.js:269:30
+      2  100.0%          LazyCompile: ~parseWithoutProcessing C:\Users\feruyo\Google Drive\CoderHouse\BckEnd\DesafiosBackend\D-32\node_modules\handlebars\dist\cjs\handlebars\compiler\base.js:33:32
+      2  100.0%            LazyCompile: ~parse C:\Users\feruyo\Google Drive\CoderHouse\BckEnd\DesafiosBackend\D-32\node_modules\handlebars\dist\cjs\handlebars\compiler\base.js:51:15
+      2    9.1%        C:\Program Files\nodejs\node.exe
+      1   50.0%          LazyCompile: ~Glob._processReaddir2 C:\Users\feruyo\Google Drive\CoderHouse\BckEnd\DesafiosBackend\D-32\node_modules\glob\glob.js:375:44
+      1  100.0%            LazyCompile: ~<anonymous> C:\Users\feruyo\Google Drive\CoderHouse\BckEnd\DesafiosBackend\D-32\node_modules\glob\glob.js:370:43
+      1   50.0%          LazyCompile: ~Glob._process C:\Users\feruyo\Google Drive\CoderHouse\BckEnd\DesafiosBackend\D-32\node_modules\glob\glob.js:298:36
+      1  100.0%            LazyCompile: ~Glob._processGlobStar2 C:\Users\feruyo\Google Drive\CoderHouse\BckEnd\DesafiosBackend\D-32\node_modules\glob\glob.js:631:45
+      1    4.5%        LazyCompile: ~toNamespacedPath path.js:549:19
+      1  100.0%          LazyCompile: ~stat internal/modules/cjs/loader.js:137:14
+      1  100.0%            LazyCompile: ~tryFile internal/modules/cjs/loader.js:352:17
+      1    4.5%        LazyCompile: ~stat internal/modules/cjs/loader.js:137:14
+      1  100.0%          LazyCompile: ~Module._findPath internal/modules/cjs/loader.js:606:28
+      1  100.0%            LazyCompile: ~Module._resolveFilename internal/modules/cjs/loader.js:900:35
+      1    4.5%        LazyCompile: ~realpathSync fs.js:1540:22
+      1  100.0%          LazyCompile: ~toRealPath internal/modules/cjs/loader.js:361:20
+      1  100.0%            LazyCompile: ~tryFile internal/modules/cjs/loader.js:352:17
+      1    4.5%        LazyCompile: ~next C:\Users\feruyo\Google Drive\CoderHouse\BckEnd\DesafiosBackend\D-32\node_modules\handlebars\dist\cjs\handlebars\compiler\parser.js:478:32
+      1  100.0%          LazyCompile: ~lex C:\Users\feruyo\Google Drive\CoderHouse\BckEnd\DesafiosBackend\D-32\node_modules\handlebars\dist\cjs\handlebars\compiler\parser.js:525:30
+      1  100.0%            LazyCompile: ~lex C:\Users\feruyo\Google Drive\CoderHouse\BckEnd\DesafiosBackend\D-32\node_modules\handlebars\dist\cjs\handlebars\compiler\parser.js:525:30
+      1    4.5%        LazyCompile: ~module.exports.get_napi_build_versions C:\Users\feruyo\Google Drive\CoderHouse\BckEnd\DesafiosBackend\D-32\node_modules\bCrypt\node_modules\@mapbox\node-pre-gyp\lib\util\napi.js:115:50
+      1  100.0%          LazyCompile: ~module.exports.expand_commands C:\Users\feruyo\Google Drive\CoderHouse\BckEnd\DesafiosBackend\D-32\node_modules\bCrypt\node_modules\@mapbox\node-pre-gyp\lib\util\napi.js:94:42
+      1  100.0%            LazyCompile: ~parseOpts C:\Users\feruyo\Google Drive\CoderHouse\BckEnd\DesafiosBackend\D-32\node_modules\bCrypt\node_modules\@mapbox\node-pre-gyp\lib\node-pre-gyp.js:139:37
+      1    4.5%        LazyCompile: ~mergeSource C:\Users\feruyo\Google Drive\CoderHouse\BckEnd\DesafiosBackend\D-32\node_modules\handlebars\dist\cjs\handlebars\compiler\javascript-compiler.js:267:36
+      1  100.0%          LazyCompile: *compile C:\Users\feruyo\Google Drive\CoderHouse\BckEnd\DesafiosBackend\D-32\node_modules\handlebars\dist\cjs\handlebars\compiler\javascript-compiler.js:73:28
+      1  100.0%            LazyCompile: ~compileInput C:\Users\feruyo\Google Drive\CoderHouse\BckEnd\DesafiosBackend\D-32\node_modules\handlebars\dist\cjs\handlebars\compiler\compiler.js:507:24
+      1    4.5%        LazyCompile: ~expressInit C:\Users\feruyo\Google Drive\CoderHouse\BckEnd\DesafiosBackend\D-32\node_modules\express\lib\middleware\init.js:29:30
+      1  100.0%          LazyCompile: *trim_prefix C:\Users\feruyo\Google Drive\CoderHouse\BckEnd\DesafiosBackend\D-32\node_modules\express\lib\router\index.js:288:23
+      1  100.0%            LazyCompile: ~<anonymous> C:\Users\feruyo\Google Drive\CoderHouse\BckEnd\DesafiosBackend\D-32\node_modules\express\lib\router\index.js:275:64
+      1    4.5%        LazyCompile: ~checkInvalidHeaderChar _http_common.js:224:32
+      1  100.0%          LazyCompile: ~<anonymous> _http_outgoing.js:506:45
+      1  100.0%            LazyCompile: ~header C:\Users\feruyo\Google Drive\CoderHouse\BckEnd\DesafiosBackend\D-32\node_modules\express\lib\response.js:754:29
+      1    4.5%        LazyCompile: ~<anonymous> C:\Users\feruyo\Google Drive\CoderHouse\BckEnd\DesafiosBackend\D-32\node_modules\bCrypt\node_modules\@mapbox\node-pre-gyp\lib\util\versioning.js:235:29
+      1  100.0%          C:\Program Files\nodejs\node.exe
+      1  100.0%            LazyCompile: ~eval_template C:\Users\feruyo\Google Drive\CoderHouse\BckEnd\DesafiosBackend\D-32\node_modules\bCrypt\node_modules\@mapbox\node-pre-gyp\lib\util\versioning.js:234:23
+      1    4.5%        LazyCompile: *render C:\Users\feruyo\Google Drive\CoderHouse\BckEnd\DesafiosBackend\D-32\node_modules\express-handlebars\lib\express-handlebars.js:143:15
+      1  100.0%          C:\Program Files\nodejs\node.exe
+      1    4.5%        LazyCompile: *done C:\Users\feruyo\Google Drive\CoderHouse\BckEnd\DesafiosBackend\D-32\node_modules\express\lib\response.js:1006:27
+      1  100.0%          LazyCompile: *renderView C:\Users\feruyo\Google Drive\CoderHouse\BckEnd\DesafiosBackend\D-32\node_modules\express-handlebars\lib\express-handlebars.js:176:19
+      1  100.0%            C:\Program Files\nodejs\node.exe
+      1    4.5%        LazyCompile: *compile C:\Users\feruyo\Google Drive\CoderHouse\BckEnd\DesafiosBackend\D-32\node_modules\handlebars\dist\cjs\handlebars\compiler\javascript-compiler.js:73:28
+      1  100.0%          LazyCompile: ~compileInput C:\Users\feruyo\Google Drive\CoderHouse\BckEnd\DesafiosBackend\D-32\node_modules\handlebars\dist\cjs\handlebars\compiler\compiler.js:507:24
+      1  100.0%            LazyCompile: ~ret C:\Users\feruyo\Google Drive\CoderHouse\BckEnd\DesafiosBackend\D-32\node_modules\handlebars\dist\cjs\handlebars\compiler\compiler.js:515:15
+      9    2.2%      LazyCompile: ~writevGeneric internal/stream_base_commons.js:116:23
+      9  100.0%        LazyCompile: ~Socket._writeGeneric net.js:760:42
+      9  100.0%          LazyCompile: ~Socket._writev net.js:792:36
+      9  100.0%            LazyCompile: ~doWrite _stream_writable.js:393:17
+      9    2.2%      LazyCompile: ~statSync fs.js:1011:18
+      9  100.0%        LazyCompile: ~tryStat C:\Users\feruyo\Google Drive\CoderHouse\BckEnd\DesafiosBackend\D-32\node_modules\express\lib\view.js:174:17
+      9  100.0%          LazyCompile: ~resolve C:\Users\feruyo\Google Drive\CoderHouse\BckEnd\DesafiosBackend\D-32\node_modules\express\lib\view.js:146:42
+      9  100.0%            LazyCompile: ~lookup C:\Users\feruyo\Google Drive\CoderHouse\BckEnd\DesafiosBackend\D-32\node_modules\express\lib\view.js:104:40
+      9    2.2%      LazyCompile: ~openSync fs.js:453:18
+      9  100.0%        LazyCompile: ~readFileSync fs.js:361:22
+      8   88.9%          LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:1146:37
+      8  100.0%            LazyCompile: ~Module.load internal/modules/cjs/loader.js:973:33
+      1   11.1%          LazyCompile: ~find_package_json_with_name C:\Users\feruyo\Google Drive\CoderHouse\BckEnd\DesafiosBackend\D-32\node_modules\require_optional\index.js:27:43
+      1  100.0%            LazyCompile: ~require_optional C:\Users\feruyo\Google Drive\CoderHouse\BckEnd\DesafiosBackend\D-32\node_modules\require_optional\index.js:65:32
+      8    2.0%      LazyCompile: *compile C:\Users\feruyo\Google Drive\CoderHouse\BckEnd\DesafiosBackend\D-32\node_modules\handlebars\dist\cjs\handlebars\compiler\javascript-compiler.js:73:28
+      8  100.0%        LazyCompile: ~compileInput C:\Users\feruyo\Google Drive\CoderHouse\BckEnd\DesafiosBackend\D-32\node_modules\handlebars\dist\cjs\handlebars\compiler\compiler.js:507:24
+      5   62.5%          LazyCompile: ~ret C:\Users\feruyo\Google Drive\CoderHouse\BckEnd\DesafiosBackend\D-32\node_modules\handlebars\dist\cjs\handlebars\compiler\compiler.js:515:15
+      3   60.0%            LazyCompile: ~_renderTemplate C:\Users\feruyo\Google Drive\CoderHouse\BckEnd\DesafiosBackend\D-32\node_modules\express-handlebars\lib\express-handlebars.js:253:18
+      1   20.0%            LazyCompile: *render C:\Users\feruyo\Google Drive\CoderHouse\BckEnd\DesafiosBackend\D-32\node_modules\express-handlebars\lib\express-handlebars.js:143:15
+      1   20.0%            LazyCompile: *_renderTemplate C:\Users\feruyo\Google Drive\CoderHouse\BckEnd\DesafiosBackend\D-32\node_modules\express-handlebars\lib\express-handlebars.js:253:18
+      3   37.5%          LazyCompile: *ret C:\Users\feruyo\Google Drive\CoderHouse\BckEnd\DesafiosBackend\D-32\node_modules\handlebars\dist\cjs\handlebars\compiler\compiler.js:515:15
+      3  100.0%            LazyCompile: *render C:\Users\feruyo\Google Drive\CoderHouse\BckEnd\DesafiosBackend\D-32\node_modules\express-handlebars\lib\express-handlebars.js:143:15
+      7    1.7%      LazyCompile: ~readdir fs.js:927:17
+      7  100.0%        LazyCompile: ~Glob._readdir C:\Users\feruyo\Google Drive\CoderHouse\BckEnd\DesafiosBackend\D-32\node_modules\glob\glob.js:525:36
+      4   57.1%          LazyCompile: ~Glob._readdirInGlobStar C:\Users\feruyo\Google Drive\CoderHouse\BckEnd\DesafiosBackend\D-32\node_modules\glob\glob.js:492:46
+      4  100.0%            LazyCompile: ~Glob._readdir C:\Users\feruyo\Google Drive\CoderHouse\BckEnd\DesafiosBackend\D-32\node_modules\glob\glob.js:525:36
+      3   42.9%          LazyCompile: *Glob._process C:\Users\feruyo\Google Drive\CoderHouse\BckEnd\DesafiosBackend\D-32\node_modules\glob\glob.js:298:36
+      3  100.0%            LazyCompile: ~Glob C:\Users\feruyo\Google Drive\CoderHouse\BckEnd\DesafiosBackend\D-32\node_modules\glob\glob.js:120:15
+      7    1.7%      LazyCompile: ~cpus os.js:103:14
+      7  100.0%        LazyCompile: ~<anonymous> C:\Users\feruyo\Google Drive\CoderHouse\BckEnd\DesafiosBackend\D-32\dist\pass.js:149:18
+      7  100.0%          LazyCompile: ~handle C:\Users\feruyo\Google Drive\CoderHouse\BckEnd\DesafiosBackend\D-32\node_modules\express\lib\router\layer.js:86:49
+      7  100.0%            LazyCompile: ~next C:\Users\feruyo\Google Drive\CoderHouse\BckEnd\DesafiosBackend\D-32\node_modules\express\lib\router\route.js:114:16
+      7    1.7%      LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:264:27
+      6   85.7%        LazyCompile: ~nativeModuleRequire internal/bootstrap/loaders.js:297:29
+      1   16.7%          LazyCompile: ~setupPrepareStackTrace internal/bootstrap/node.js:251:32
+      1  100.0%            Eval: ~<anonymous> internal/bootstrap/node.js:1:1
+      1   16.7%          LazyCompile: ~initializeCJSLoader internal/bootstrap/pre_execution.js:399:29
+      1  100.0%            LazyCompile: ~prepareMainThreadExecution internal/bootstrap/pre_execution.js:14:36
+      1   16.7%          Eval: ~<anonymous> internal/cluster/master.js:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:264:27
+      1   16.7%          Eval: ~<anonymous> crypto.js:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:264:27
+      1   16.7%          Eval: ~<anonymous> buffer.js:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:264:27
+      1   16.7%          Eval: ~<anonymous> _tls_wrap.js:1:1
+      1  100.0%            LazyCompile: ~compileForInternalLoader internal/bootstrap/loaders.js:264:27
+      1   14.3%        LazyCompile: ~compileForPublicLoader internal/bootstrap/loaders.js:213:25
+      1  100.0%          LazyCompile: ~loadNativeModule internal/modules/cjs/helpers.js:20:26
+      1  100.0%            LazyCompile: ~Module._load internal/modules/cjs/loader.js:822:24
+      6    1.5%      LazyCompile: ~readSync fs.js:536:18
+      6  100.0%        LazyCompile: ~tryReadSync fs.js:349:21
+      6  100.0%          LazyCompile: ~readFileSync fs.js:361:22
+      6  100.0%            LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:1146:37
+      6    1.5%      LazyCompile: *next C:\Users\feruyo\Google Drive\CoderHouse\BckEnd\DesafiosBackend\D-32\node_modules\handlebars\dist\cjs\handlebars\compiler\parser.js:478:32
+      6  100.0%        LazyCompile: *parse C:\Users\feruyo\Google Drive\CoderHouse\BckEnd\DesafiosBackend\D-32\node_modules\handlebars\dist\cjs\handlebars\compiler\parser.js:269:30
+      6  100.0%          LazyCompile: ~parseWithoutProcessing C:\Users\feruyo\Google Drive\CoderHouse\BckEnd\DesafiosBackend\D-32\node_modules\handlebars\dist\cjs\handlebars\compiler\base.js:33:32
+      6  100.0%            LazyCompile: ~parse C:\Users\feruyo\Google Drive\CoderHouse\BckEnd\DesafiosBackend\D-32\node_modules\handlebars\dist\cjs\handlebars\compiler\base.js:51:15
+      5    1.2%      LazyCompile: ~read internal/modules/package_json_reader.js:12:14
+      4   80.0%        LazyCompile: ~readPackage internal/modules/cjs/loader.js:243:21
+      3   75.0%          LazyCompile: ~readPackageExports internal/modules/cjs/loader.js:301:28
+      3  100.0%            LazyCompile: ~applyExports internal/modules/cjs/loader.js:440:22
+      1   25.0%          LazyCompile: ~readPackageScope internal/modules/cjs/loader.js:278:26
+      1  100.0%            LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:1146:37
+      1   20.0%        LazyCompile: *readPackageScope internal/modules/cjs/loader.js:278:26
+      1  100.0%          LazyCompile: ~Module._extensions..js internal/modules/cjs/loader.js:1146:37
+      1  100.0%            LazyCompile: ~Module.load internal/modules/cjs/loader.js:973:33
+      5    1.2%      LazyCompile: *nextTick internal/process/task_queues.js:105:18
+      2   40.0%        LazyCompile: ~onwrite _stream_writable.js:431:17
+      2  100.0%          LazyCompile: *afterWriteDispatched internal/stream_base_commons.js:149:30
+      2  100.0%            LazyCompile: ~writevGeneric internal/stream_base_commons.js:116:23
+      1   20.0%        LazyCompile: ~resume _stream_readable.js:971:16
+      1  100.0%          LazyCompile: ~Readable.resume _stream_readable.js:957:37
+      1  100.0%            LazyCompile: ~_dump _http_incoming.js:282:49
+      1   20.0%        LazyCompile: ~resOnFinish _http_server.js:676:21
+      1  100.0%          LazyCompile: *emit events.js:263:44
+      1  100.0%            LazyCompile: ~onFinish _http_outgoing.js:721:18
+      1   20.0%        LazyCompile: ~emitReadable _stream_readable.js:540:22
+      1  100.0%          LazyCompile: ~onEofChunk _stream_readable.js:510:20
+      1  100.0%            LazyCompile: ~readableAddChunk _stream_readable.js:220:26
+
